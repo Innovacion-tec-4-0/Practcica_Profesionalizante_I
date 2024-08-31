@@ -1,3 +1,4 @@
+**WIKI**
 
 * [Home](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki)
 
@@ -14,9 +15,8 @@
 * [Entregable 2](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Ceremonias-de-Scrum-Sprint-2)
 * [Ceremonias de Scrum](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Ceremonias-de-Scrum)
 
-**Sobre el Proyecto**
+**---**
 
-* [Presentación de la Propuesta](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I)
-* [Maquetado](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Organizaci%C3%B3n)
+* [Maquetado](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Maquetado)
 * [Sensores y actuadores](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Sensores-y-actuadores)
 * [AWS](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Servicios-AWS)
