@@ -1,24 +1,22 @@
-# TECNICATURA SUPERIOR EN  Innovación con Tecnologías 4.0
 
-### Desarrollo Proyecto - Práctica Profesionalizante I
+* [Home](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki)
 
- 
- * Nombre Instituto: Instituto Superior Politécnico Córdoba
- * Nombre de la Tecnicatura: Tecnicatura Superior en Innovación con Tecnologías 4.0
- * Módulo: Práctica Profesionalizante I
- * Nombre del Trabajo:
- * Nombre del Docente: Alejandro Mainero
- * Descripción de roles:
-   
-       * Product Owner: Martins, César
-       * Scrum Master: Urcola, M. Victoria
-       * Scrum Team: Ferreyra, Santiago
-                     Peña, Romina
-                     Trejo, Gastón
-
- * Cohorte: 2023
+**Organización del equipo**
+* [Plan de trabajo](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Organizaci%C3%B3n)
+* [Herramientas de organización](https://trello.com/invite/b/66be4de41b9504d75398bf56/ATTI57e999f08bcedc076140303ba330dee6C53A76D0/practica-prof) 
 
 
-## Sistema de Monitoreo Ambiental IoT para la Preservación de Obras de Arte en Museos
+**Sprint 1**
+* [Entregable 1](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/blob/main/Sprint_1/sprint-1.pdf)
+* [Ceremonias de Scrum](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Ceremonias-de-Scrum-Sprint-1)
 
-Este proyecto propone un sistema inteligente de monitoreo ambiental basado en el Internet de las Cosas (IoT) para museos, con el objetivo de preservar obras de arte mediante el control de condiciones ambientales que puedan afectar su integridad, como la temperatura, la humedad, la luz y la calidad del aire. El sistema no solo monitorea estas condiciones de forma continua, sino que también incluye medidas de seguridad y alertas automáticas para proteger las piezas ante posibles amenazas.
+**Sprint 2**
+* [Entregable 2](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Ceremonias-de-Scrum-Sprint-2)
+* [Ceremonias de Scrum](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Ceremonias-de-Scrum)
+
+**Sobre el Proyecto**
+
+* [Presentación de la Propuesta](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I)
+* [Maquetado](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Organizaci%C3%B3n)
+* [Sensores y actuadores](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Sensores-y-actuadores)
+* [AWS](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Servicios-AWS)
