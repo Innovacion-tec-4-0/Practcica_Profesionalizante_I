@@ -8,8 +8,13 @@
  * Módulo: Práctica Profesionalizante I
  * Nombre del Trabajo:
  * Nombre del Docente: Alejandro Mainero
- * Nombre del Alumno: Ferreyra, Santiago; Martins, César; Peña, Romina; Trejo,
- * Gastón: Urcola, M. Victoria
+ * Descripción de roles
+       * Product Owner: Martins, César
+       * Scrum Master: Urcola, M. Victoria
+       * Scrum Team: Ferreyra, Santiago
+                     Peña, Romina
+                     Trejo, Gastón
+
  * Cohorte: 2023
 
 
