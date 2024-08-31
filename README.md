@@ -8,7 +8,8 @@
  * Módulo: Práctica Profesionalizante I
  * Nombre del Trabajo:
  * Nombre del Docente: Alejandro Mainero
- * Descripción de roles
+ * Descripción de roles:
+   
        * Product Owner: Martins, César
        * Scrum Master: Urcola, M. Victoria
        * Scrum Team: Ferreyra, Santiago
