@@ -1,6 +1,8 @@
 *About* 
-Sistema de Monitoreo Ambiental IoT para la Preservación de Obras de Arte en Museos Este proyecto propone un sistema inteligente de monitoreo ambiental basado en el Internet de las Cosas (IoT) para museos, con el objetivo de preservar obras de arte mediante el control de condiciones ambientales que puedan afectar su integridad, como la temperatura.
-[Plano](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/blob/main/src/plano%20museo.jpeg)
+
+- Sistema de Monitoreo Ambiental IoT para la Preservación de Obras de Arte en Museos Este proyecto propone un sistema inteligente de monitoreo ambiental basado en el Internet de las Cosas (IoT) para museos, con el objetivo de preservar obras de arte mediante el control de condiciones ambientales que puedan afectar su integridad, como la temperatura.
+ 
+* [Plano](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/blob/main/src/plano%20museo.jpeg)
 
 **WIKI**
 
