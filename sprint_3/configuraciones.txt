@@ -1,0 +1,3 @@
+configurar listener mosquitto
+
+mosquitto -c mosquitto.conf -v
