@@ -20,7 +20,7 @@ topico_pir = "sala/pir"
 topico_aviso_humedad = "sala/aviso_humedad"
 
 # Ruta en tu computadora donde quieres guardar los datos (en el mismo directorio que el script)
-ruta_guardado = os.path.join(os.getcwd(), "sensor_data.txt")
+ruta_guardado = os.path.join(os.getcwd(), "sensor_data.json")
 
 # Inicializar el diccionario para almacenar datos
 data_dict = {}
