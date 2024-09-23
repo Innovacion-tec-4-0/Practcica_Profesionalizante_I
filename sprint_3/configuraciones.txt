@@ -1,0 +1,9 @@
+1 -descargar mosquitto 
+
+2- configurar listener mosquitto
+
+mosquitto -c mosquitto.conf -v
+
+3- abri vsc new proy en platformIO
+
+4- Build
