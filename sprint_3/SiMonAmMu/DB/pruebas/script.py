@@ -4,7 +4,8 @@ import os
 import paho.mqtt.client as mqtt
 from datetime import datetime
 from conexion_db import Conexion
-import data_recept
+import conexion_db
+import DB.pruebas.data_recept as data_recept
 # Asegúrate de que este módulo aún sea necesario
 
 # Tópicos

@@ -55,7 +55,7 @@ def guardar_datos_json(temperatura, humedad, lux, led, movimiento):
         f.write("\n")  # Para separar cada entrada
     print("Datos almacenados en JSON.")
 
-'''def on_message(client, userdata, message):
+def on_message(client, userdata, message):
     payload = message.payload.decode()
     print("Payload recibido:", payload)
     datos = payload.split(",")
@@ -74,7 +74,7 @@ def guardar_datos_json(temperatura, humedad, lux, led, movimiento):
 
     except ValueError as e:
         print(f"Error al procesar los datos: {e}")
-'''
+
 # Función para obtener temperaturas desde la base de datos
 def obtener_temperaturas(conn):
     if conn:

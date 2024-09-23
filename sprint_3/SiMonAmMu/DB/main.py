@@ -10,18 +10,26 @@ topico_humedad = "sala/humedad"
 topico_led = "sala/led"
 topico_luz = "sala/luz"
 topico_movimiento = "sala/movimiento"
+topico_potenciometro = "sala/potenciometro"
+topico_ventilacion = "sala/ventilacion"
+topico_pir = "sala/pir"
+topico_aviso_humedad = "sala/aviso_humedad"
 
 # ID del sistema
 id = "SiMonAmMu"
 
-# Crear el cliente MQTT
+#  Crear el cliente MQTT
 client = mqtt.Client()
-conexion = Conexion()
 
-# Definir el archivo JSON
-json_file_path = "datos_sensores.json"
+# Obtener el directorio actual
+directorio_actual = os.getcwd()
 
-def guardar_datos(sensor):
+# Definir la ruta completa del archivo JSON
+json_file_path = os.path.join(directorio_actual, "datos_SimMonAmMu.json")
+
+print(f"Archivo JSON se guardará en: {json_file_path}")
+
+def guardar_datos(temperatura, humedad, lux, led, movimiento, potenciometro=None, ventilacion=None, pir=None, aviso_humedad=None):
     # Verifica si el archivo existe
     if not os.path.exists(json_file_path):
         with open(json_file_path, 'w') as file:
@@ -34,10 +42,16 @@ def guardar_datos(sensor):
     # Agrega los nuevos datos
     nuevos_datos = {
         "id": id,
-        "sensor": sensor.getsensor(),
-        "nombre": sensor.getnombre(),
-        "descripcion": sensor.getdescripcion(),
-        "fecha": sensor.getfecha().isoformat()
+        "temperatura": temperatura,
+        "humedad": humedad,
+        "lux": lux,
+        "led": led,
+        "movimiento": movimiento,
+        "potenciometro": potenciometro,
+        "ventilacion": ventilacion,
+        "pir": pir,
+        "aviso_humedad": aviso_humedad,
+        "fecha": datetime.now().isoformat()
     }
     datos_existentes.append(nuevos_datos)
 
@@ -45,7 +59,7 @@ def guardar_datos(sensor):
     with open(json_file_path, 'w') as file:
         json.dump(datos_existentes, file, indent=4)
 
-def insertar_datos(conn, temperatura, humedad, lux, led, movimiento):
+def insertar_datos(conn, temperatura, humedad, lux, led, movimiento, potenciometro=None, ventilacion=None, pir=None, aviso_humedad=None):
     if conn:
         try:
             with conn.conectar.cursor() as cursor:
@@ -66,11 +80,20 @@ def insertar_datos(conn, temperatura, humedad, lux, led, movimiento):
                 cursor.execute("INSERT INTO movimiento (estado) VALUES (%s)", (movimiento,))
                 movimiento_id = cursor.lastrowid
 
-                cursor.execute("""
-                    INSERT INTO datos_ambientales 
+                # Guardar datos adicionales si están disponibles
+                if potenciometro is not None:
+                    cursor.execute("INSERT INTO potenciometro (valor) VALUES (%s)", (potenciometro,))
+                if ventilacion is not None:
+                    cursor.execute("INSERT INTO ventilacion (valor) VALUES (%s)", (ventilacion,))
+                if pir is not None:
+                    cursor.execute("INSERT INTO pir (estado) VALUES (%s)", (pir,))
+                if aviso_humedad is not None:
+                    cursor.execute("INSERT INTO aviso_humedad (estado) VALUES (%s)", (aviso_humedad,))
+
+                cursor.execute("""INSERT INTO datos_ambientales 
                     (temperatura_id, humedad_id, lux_id, led_id, movimiento_id, fecha_hora) 
-                    VALUES (%s, %s, %s, %s, %s, NOW())
-                """, (temperatura_id, humedad_id, lux_id, led_id, movimiento_id))
+                    VALUES (%s, %s, %s, %s, %s, NOW())""",
+                    (temperatura_id, humedad_id, lux_id, led_id, movimiento_id))
 
                 conn.conectar.commit()
                 print("Datos almacenados correctamente.")
@@ -82,18 +105,36 @@ def on_message(client, userdata, message):
     payload = message.payload.decode()
     print("Payload recibido:", payload)
     datos = payload.split(",")
+    
+    # Inicializa las variables
+    temperatura = humedad = lux = led = movimiento = None
+    potenciometro = ventilacion = pir = aviso_humedad = None
 
     try:
-        temperatura = float(datos[0])
-        humedad = float(datos[1])
-        lux = int(datos[2])
-        led = int(datos[3])
-        movimiento = int(datos[4])
+        if message.topic == topico_temperatura:
+            temperatura = float(datos[0])
+        elif message.topic == topico_humedad:
+            humedad = float(datos[0])
+        elif message.topic == topico_luz:
+            lux = int(datos[0])
+        elif message.topic == topico_led:
+            led = int(datos[0])
+        elif message.topic == topico_movimiento:
+            movimiento = int(datos[0])
+        elif message.topic == topico_potenciometro:
+            potenciometro = float(datos[0])
+        elif message.topic == topico_ventilacion:
+            ventilacion = float(datos[0])
+        elif message.topic == topico_pir:
+            pir = int(datos[0])
+        elif message.topic == topico_aviso_humedad:
+            aviso_humedad = int(datos[0])
 
-        with Conexion() as conn:
-            insertar_datos(conn, temperatura, humedad, lux, led, movimiento)
-            guardar_datos(sensor)  # Aquí deberías definir cómo crear el objeto 'sensor'
-            
+        # Solo insertar datos si todas las variables están definidas
+        if temperatura is not None and humedad is not None and lux is not None and led is not None and movimiento is not None:
+            with Conexion() as conn:
+                insertar_datos(conn, temperatura, humedad, lux, led, movimiento, potenciometro, ventilacion, pir, aviso_humedad)
+                guardar_datos(temperatura, humedad, lux, led, movimiento, potenciometro, ventilacion, pir, aviso_humedad)
     except ValueError as e:
         print(f"Error al procesar los datos: {e}")
 
@@ -118,7 +159,11 @@ if __name__ == "__main__":
                       (topico_humedad, 0),
                       (topico_led, 0),
                       (topico_luz, 0),
-                      (topico_movimiento, 0)])
+                      (topico_movimiento, 0),
+                      (topico_potenciometro, 0),
+                      (topico_ventilacion, 0),
+                      (topico_pir, 0),
+                      (topico_aviso_humedad, 0)])
 
     client.loop_start()
 
