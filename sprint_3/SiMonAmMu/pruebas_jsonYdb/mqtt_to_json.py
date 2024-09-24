@@ -5,10 +5,10 @@ import json
 import os
 
 # Ruta para que se guarde el archivo JSON en la misma carpeta que el script
-json_file_path = os.path.join(os.path.dirname(__file__), "sensor_data.json")
+json_file_path = os.path.join(os.path.dirname(__file__), "sensor_datav.json")
 
 # Ruta para guardar una copia en la carpeta específica
-json_backup_path = r"D:\2024-segunda etapa\Practica_Profesionalizante_I\sprint_3\SiMonAmMu\DB\json\sensor_data.json"
+json_backup_path = r"D:\2024-segunda etapa\Practica_Profesionalizante_I\sprint_3\SiMonAmMu\DB\json\sensor_datav.json"
 
 # Verificar si la carpeta existe, si no, la crea
 os.makedirs(os.path.dirname(json_file_path), exist_ok=True)

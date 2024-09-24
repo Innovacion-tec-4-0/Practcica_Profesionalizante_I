@@ -1,7 +1,7 @@
 #data_recept.py
 import paho.mqtt.client as mqttClient
 import json
-from conexion_db import Conexion
+from test.conexion_db import Conexion
 
 
 from datetime import datetime
@@ -50,7 +50,7 @@ def guardar_datos_json(temperatura, humedad, lux, led, movimiento):
         "movimiento": movimiento
     }
 
-    with open("datos.json", "a") as f:
+    with open("datosv.json", "a") as f:
         json.dump(datos, f)
         f.write("\n")  # Para separar cada entrada
     print("Datos almacenados en JSON.")
