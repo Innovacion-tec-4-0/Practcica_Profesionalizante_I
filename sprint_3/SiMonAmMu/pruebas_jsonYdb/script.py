@@ -3,8 +3,8 @@ import json
 import os
 import paho.mqtt.client as mqtt
 from datetime import datetime
-from conexion_db import Conexion
-import conexion_db
+from test.conexion_db import Conexion
+import test.conexion_db as conexion_db
 import DB.pruebas.data_recept as data_recept
 # Asegúrate de que este módulo aún sea necesario
 

@@ -1,7 +1,7 @@
 import json
 import os
 import paho.mqtt.client as mqtt
-from conexion_db import Conexion
+from test.conexion_db import Conexion
 from datetime import datetime
 
 # Tópicos
