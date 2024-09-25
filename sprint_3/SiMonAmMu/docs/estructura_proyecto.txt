@@ -79,18 +79,13 @@ SiMonAmMu/
         settings.json
     DB/
         conexion_db.py
-        json/
-        main.py
-        pruebas/
-            data_recept.py
-            JsonData.py
-            mqtt_to_json.py
-            script.py
+        mq2.py
         simonammu.sql
+        tabla.py
         __pycache__/
             conexion_db.cpython-311.pyc
             conexion_db.cpython-312.pyc
-            script.cpython-312.pyc
+            tabla.cpython-311.pyc
             tabla.cpython-312.pyc
     DB.code-workspace
     diagram.json
@@ -101,6 +96,13 @@ SiMonAmMu/
     lib/
         README
     platformio.ini
+    pruebas_jsonYdb/
+        data_recept.py
+        JsonData.py
+        main.py
+        mqtt_to_json.py
+        santi.py
+        script.py
     scripts/
         estruct.py
     src/

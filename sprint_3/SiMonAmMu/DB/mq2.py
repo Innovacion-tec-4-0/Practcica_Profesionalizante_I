@@ -1,9 +1,8 @@
 import paho.mqtt.client as mqtt
 import json
-from DB.conexion_db import Conexion
+from conexion_db import Conexion
 from tabla import Sensores
 
-usuario = "sala/temperatura"
 # Tópicos MQTT
 temperatura_topic = "sala/temperatura"
 humedad_topic = "sala/humedad"
@@ -37,46 +36,16 @@ def on_connect(client, userdata, flags, rc):
 
 # Función que se ejecuta cuando se recibe un mensaje del broker
 def on_message(client, userdata, msg):
-    payload = msg.payload.decode()
-    print(f"Mensaje recibido: {payload} del tópico {msg.topic}")
-
-    # Verificar el tópico y procesar según su tipo
-    if msg.topic == "sala/aviso_humedad":
-        print("Acción a tomar para aviso de humedad:", payload)
-    elif msg.topic == "sala/potenciometro":
-        # Suponiendo que este es un valor numérico
-        try:
-            valor = float(payload)
-            print(f"Valor recibido de potenciometro: {valor}")
-            # Aquí puedes insertar el dato en la base de datos o procesarlo
-        except ValueError:
-            print("Error al convertir el valor de potenciometro a float.")
-    elif msg.topic == "sala/luz":
-        # Suponiendo que este es un valor numérico
-        try:
-            valor = float(payload)
-            print(f"Valor recibido de luz: {valor}")
-            # Aquí puedes insertar el dato en la base de datos o procesarlo
-        except ValueError:
-            print("Error al convertir el valor de luz a float.")
-    elif msg.topic == "sala/humedad":
-        try:
-            valor = float(payload)
-            print(f"Valor recibido de humedad: {valor}")
-            # Aquí puedes insertar el dato en la base de datos o procesarlo
-        except ValueError:
-            print("Error al convertir el valor de humedad a float.")
-    elif msg.topic == "sala/temperatura":
-        try:
-            valor = float(payload)
-            print(f"Valor recibido de temperatura: {valor}")
-            # Aquí puedes insertar el dato en la base de datos o procesarlo
-        except ValueError:
-            print("Error al convertir el valor de temperatura a float.")
-    elif msg.topic == "sala/movimiento":
-        print(f"Estado de movimiento: {payload}")
-    else:
-        print("Mensaje no procesado:", payload)
+    print(f"Mensaje recibido: {msg.payload.decode()} del tópico {msg.topic}")
+    
+    try:
+        # Suponiendo que el mensaje es un JSON
+        mensaje = json.loads(msg.payload.decode())
+        # Procesa el mensaje aquí, por ejemplo, inserta en la base de datos
+        # sensor = Sensores(0, 1, "humedad", mensaje)  # Ejemplo
+        # conectar.insertarDatos(sensor)               # Inserta el dato en la base
+    except json.JSONDecodeError:
+        print("Error al decodificar el mensaje JSON")
 
 # Crear un cliente MQTT
 cliente = mqtt.Client()
