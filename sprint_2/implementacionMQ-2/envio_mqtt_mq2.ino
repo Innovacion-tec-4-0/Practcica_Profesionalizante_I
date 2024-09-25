@@ -2,8 +2,8 @@
 #include <PubSubClient.h>
 
 
-const char* ssid = "427016";
-const char* password = "248602050";
+const char* ssid = "***";
+const char* password = "***";
 const char* mqtt_server = "test.mosquitto.org";  // Broker MQTT
 
 const char* topico = "pentadevs/mq2";
