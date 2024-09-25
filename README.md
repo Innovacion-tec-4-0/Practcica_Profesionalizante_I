@@ -32,6 +32,7 @@
 **Sprint 3**
 * [Ceremonias de Scrum](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Ceremonias-de-Scrum-Sprint-3)
 * [Entregable 3]
+* [Simulación en VSC + Wokwi + PlatformIO](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/tree/main/sprint_3/SiMonAmMu)
 * [Enlace a Wokwi](https://wokwi.com/projects/409765085536703489)
 
 ----------------------------------------------------
