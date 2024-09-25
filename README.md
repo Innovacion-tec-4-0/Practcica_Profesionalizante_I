@@ -14,13 +14,13 @@
 
 ----------------------------------------------------
 
-**Sprint 1**
+**Sprint 0**
 * [Ceremonias de Scrum](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Ceremonias-de-Scrum-Sprint-1)
 * [Entregable 1](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/blob/main/Sprint_1/sprint-1.pdf)
 
 ----------------------------------------------------
 
-**Sprint 2**
+**Sprint 1**
 * [Ceremonias de Scrum](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Ceremonias-de-Scrum)
 * [Sesión de Brainstorming](https://www.canva.com/design/DAGPRsmLWy0/iLLMRFZK2opasB_w09YQlg/edit)
 * [Entregable 2](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/tree/main/Sprint_2)
@@ -29,7 +29,7 @@
 
 ----------------------------------------------------
 
-**Sprint 3**
+**Sprint 2**
 * [Ceremonias de Scrum](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/wiki/Ceremonias-de-Scrum-Sprint-3)
 * [Entregable 3]
 * [Simulación en VSC + Wokwi + PlatformIO](https://github.com/Innovacion-tec-4-0/Practica_Profesionalizante_I/tree/main/sprint_3/SiMonAmMu)
